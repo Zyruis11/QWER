@@ -1,0 +1,9 @@
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\bin\WindowsGL\Debug\Button Masher.exe
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\bin\WindowsGL\Debug\Button Masher.pdb
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\bin\WindowsGL\Debug\MonoGame.Framework.dll
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\bin\WindowsGL\Debug\OpenTK.dll
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\obj\x86\Debug\Button Masher.csprojResolveAssemblyReference.cache
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\obj\x86\Debug\Button Masher.exe
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\obj\x86\Debug\Button Masher.pdb
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\bin\WindowsGL\Debug\Content\shipYellow.png
+E:\Documents\Documents\GitHub\Button Masher\Button Masher\Button Masher\bin\WindowsGL\Debug\Content\shipYellow.xnb
