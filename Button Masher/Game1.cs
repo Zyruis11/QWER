@@ -16,6 +16,11 @@ namespace Button_Masher
         int score;
         int lives;
 
+        int height;
+        int width;
+
+        SpriteFont font; 
+
         Texture2D box1;
         Texture2D box2;
         Texture2D box3;
@@ -24,6 +29,8 @@ namespace Button_Masher
         Vector2 pos2;
         Vector2 pos3;
         Vector2 pos4;
+        Vector2 scorePos;
+        Vector2 livesPos; 
         Color[] selectedBox;
         Color[] colorData1;
         Color[] colorData2;
@@ -48,10 +55,12 @@ namespace Button_Masher
         {
             score = 0;
             lives = 3;
+       
             box1 = new Texture2D(this.GraphicsDevice, 100, 100);
             box2 = new Texture2D(this.GraphicsDevice, 100, 100);
             box3 = new Texture2D(this.GraphicsDevice, 100, 100);
             box4 = new Texture2D(this.GraphicsDevice, 100, 100);
+
             colorData1 = new Color[100 * 100];
             colorData2 = new Color[100 * 100];
             colorData3 = new Color[100 * 100];
@@ -76,14 +85,18 @@ namespace Button_Masher
             box3.SetData<Color>(colorData3);
             box4.SetData<Color>(colorData4);
 
-            pos1 = new Vector2(10, 10);
-            pos2 = new Vector2(120, 10);
-            pos3 = new Vector2(230,10);
-            pos4 = new Vector2(340, 10);
-
+            height = graphics.GraphicsDevice.Viewport.Height;
+            width = graphics.GraphicsDevice.Viewport.Width;
+            Console.WriteLine("Width:" + width);
+            Console.WriteLine("Height: " + height);
+            pos1 = new Vector2((width / 4) - 150, (height / 2) - 50);
+            pos2 = new Vector2((width / 2) - 150, (height / 2) - 50);
+            pos3 = new Vector2((width /2) + 50, (height / 2) - 50);
+            pos4 = new Vector2((width - 150) , (height / 2) - 50);
+            scorePos = new Vector2(20,20);
+            livesPos = new Vector2(730,20);
             boxID = RandNum(boxID);
             
-
             base.Initialize();
         }
 
@@ -95,7 +108,7 @@ namespace Button_Masher
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            font = Content.Load<SpriteFont>("font");
         }
 
         /// <summary>
@@ -104,7 +117,7 @@ namespace Button_Masher
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+       
         }
 
         /// <summary>
@@ -139,7 +152,6 @@ namespace Button_Masher
                             score++;
                             box2.SetData<Color>(colorData2);
                             boxID = RandNum(boxID);
-                            break;
                         }
                         break;
                     case 3:
@@ -149,7 +161,6 @@ namespace Button_Masher
                             score++;
                             box3.SetData<Color>(colorData3);
                             boxID = RandNum(boxID);
-                            break;
                         }
                         break; 
                     case 4:
@@ -159,7 +170,6 @@ namespace Button_Masher
                             score++;
                             box4.SetData<Color>(colorData4);
                             boxID = RandNum(boxID);
-                            break;
                         }
                         break;
                 }
@@ -175,6 +185,8 @@ namespace Button_Masher
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
+            spriteBatch.DrawString(font,"Score: " + score,scorePos,Color.Black);
+            spriteBatch.DrawString(font,"Lives: " + lives,livesPos,Color.Black);
             spriteBatch.Draw(box1, pos1);
             spriteBatch.Draw(box2, pos2);
             spriteBatch.Draw(box3, pos3);
@@ -183,10 +195,15 @@ namespace Button_Masher
             base.Draw(gameTime);
         }
 
+        /// <summary>
+        /// Generates a random number between 1 and 5
+        /// </summary>
+        /// <param name="i">The int that is to be randomly generated</param>
+        /// <returns></returns>
         public int RandNum(int i)
         {
             Random rand = new Random();
-            i = rand.Next(1, 4);
+            i = rand.Next(1, 5);
             return i;
         }
 

@@ -1,0 +1,8 @@
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Release\Content\shipYellow.png
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Release\Content\shipYellow.xnb
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Release\Button Masher.exe
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Release\Button Masher.pdb
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Release\MonoGame.Framework.dll
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Release\OpenTK.dll
+E:\Documents\Documents\GitHub\QWER\Button Masher\obj\x86\Release\Button Masher.exe
+E:\Documents\Documents\GitHub\QWER\Button Masher\obj\x86\Release\Button Masher.pdb

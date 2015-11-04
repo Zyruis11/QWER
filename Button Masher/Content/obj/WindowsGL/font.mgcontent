@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>E:/Documents/Documents/GitHub/QWER/Button Masher/Content/font.spritefont</SourceFile>
+  <SourceTime>2015-11-04T23:24:33.3596759+10:00</SourceTime>
+  <DestFile>E:/Documents/Documents/GitHub/QWER/Button Masher/Content/bin/WindowsGL/font.xnb</DestFile>
+  <DestTime>2015-11-04T23:27:40.86633+10:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2015-04-30T03:14:44+10:00</ProcessorTime>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

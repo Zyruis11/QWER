@@ -4,6 +4,7 @@
   <Platform>WindowsGL</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/Documents/Documents/GitHub/Button Masher/Button Masher/Button Masher/Content/shipYellow.png</File>
+    <File>E:/Documents/Documents/GitHub/QWER/Button Masher/Content/shipYellow.png</File>
+    <File>E:/Documents/Documents/GitHub/QWER/Button Masher/Content/font.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

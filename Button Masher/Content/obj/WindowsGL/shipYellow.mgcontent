@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>E:/Documents/Documents/GitHub/Button Masher/Button Masher/Button Masher/Content/shipYellow.png</SourceFile>
+  <SourceFile>E:/Documents/Documents/GitHub/QWER/Button Masher/Content/shipYellow.png</SourceFile>
   <SourceTime>2015-11-04T12:05:01.5033473+10:00</SourceTime>
-  <DestFile>E:/Documents/Documents/GitHub/Button Masher/Button Masher/Button Masher/Content/bin/WindowsGL/shipYellow.xnb</DestFile>
-  <DestTime>2015-11-04T12:09:27.7411679+10:00</DestTime>
+  <DestFile>E:/Documents/Documents/GitHub/QWER/Button Masher/Content/bin/WindowsGL/shipYellow.xnb</DestFile>
+  <DestTime>2015-11-04T18:25:35.2558537+10:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
