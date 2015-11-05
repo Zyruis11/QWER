@@ -19,6 +19,8 @@ namespace Button_Masher
         int height;
         int width;
 
+        KeyboardState oldState; 
+
         SpriteFont font; 
 
         Texture2D box1;
@@ -127,8 +129,12 @@ namespace Button_Masher
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+         
+            KeyboardState newState = Keyboard.GetState();
+
             if (IsActive)
             {
+                Console.WriteLine("Current Box: " + boxID);
                 if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 {
                     Exit();
@@ -138,39 +144,47 @@ namespace Button_Masher
                 {
                     case 1:
                         box1.SetData<Color>(selectedBox);
-                        if (Keyboard.GetState().IsKeyDown(Keys.Q))
+                        if (oldState.IsKeyDown(Keys.Q) && newState.IsKeyDown(Keys.Q))
                         {
                             score++;
                             box1.SetData<Color>(colorData1);
                             boxID = RandNum(boxID);
+                            Console.WriteLine("ID has changed");
                         }
+                        oldState = newState;
                         break;
                     case 2:
                         box2.SetData<Color>(selectedBox);
-                        if (Keyboard.GetState().IsKeyDown(Keys.W))
+                        if (oldState.IsKeyDown(Keys.W) && newState.IsKeyDown(Keys.W))
                         {
                             score++;
                             box2.SetData<Color>(colorData2);
                             boxID = RandNum(boxID);
+                            Console.WriteLine("ID has changed");
                         }
+                        oldState = newState;
                         break;
                     case 3:
                         box3.SetData<Color>(selectedBox);
-                        if (Keyboard.GetState().IsKeyDown(Keys.E))
+                        if (oldState.IsKeyDown(Keys.E) && newState.IsKeyDown(Keys.E))
                         {
                             score++;
                             box3.SetData<Color>(colorData3);
                             boxID = RandNum(boxID);
+                            Console.WriteLine("ID has changed");
                         }
+                        oldState = newState;
                         break; 
                     case 4:
                         box4.SetData<Color>(selectedBox);
-                        if (Keyboard.GetState().IsKeyDown(Keys.R))
+                        if (oldState.IsKeyDown(Keys.R) && newState.IsKeyDown(Keys.R))
                         {
                             score++;
                             box4.SetData<Color>(colorData4);
                             boxID = RandNum(boxID);
+                            Console.WriteLine("ID has changed");
                         }
+                        oldState = newState;
                         break;
                 }
                 base.Update(gameTime);
