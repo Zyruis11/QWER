@@ -17,3 +17,4 @@ E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Debug\MonoGame.Fr
 E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Debug\OpenTK.dll
 E:\Documents\Documents\GitHub\QWER\Button Masher\obj\x86\Debug\Button Masher.csprojResolveAssemblyReference.cache
 E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Debug\Content\font.xnb
+E:\Documents\Documents\GitHub\QWER\Button Masher\bin\WindowsGL\Debug\Content\star.xnb

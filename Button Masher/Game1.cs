@@ -2,6 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Button_Masher
 {
@@ -12,6 +15,7 @@ namespace Button_Masher
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
         int boxID;
         int score;
         int lives;
@@ -21,12 +25,19 @@ namespace Button_Masher
 
         KeyboardState oldState; 
 
-        SpriteFont font; 
+        SpriteFont font;
+
+        //The Boxes are in order left to right
+        Box leftBox;
+        Box secondLeftBox;
+        Box rightBox;
+        Box secondRightBox; 
 
         Texture2D box1;
         Texture2D box2;
         Texture2D box3;
-        Texture2D box4; 
+        Texture2D box4;
+        Texture2D particle;
         Vector2 pos1;
         Vector2 pos2;
         Vector2 pos3;
@@ -86,19 +97,25 @@ namespace Button_Masher
             box2.SetData<Color>(colorData2);
             box3.SetData<Color>(colorData3);
             box4.SetData<Color>(colorData4);
-
+         
             height = graphics.GraphicsDevice.Viewport.Height;
             width = graphics.GraphicsDevice.Viewport.Width;
             Console.WriteLine("Width:" + width);
             Console.WriteLine("Height: " + height);
+
             pos1 = new Vector2((width / 4) - 150, (height / 2) - 50);
             pos2 = new Vector2((width / 2) - 150, (height / 2) - 50);
             pos3 = new Vector2((width /2) + 50, (height / 2) - 50);
             pos4 = new Vector2((width - 150) , (height / 2) - 50);
             scorePos = new Vector2(20,20);
             livesPos = new Vector2(730,20);
+
             boxID = RandNum(boxID);
-            
+
+            leftBox = new Box(box1, pos1);
+            secondLeftBox = new Box(box2,pos2);
+            rightBox = new Box(box3, pos3);
+            secondRightBox = new Box(box4,pos4);
             base.Initialize();
         }
 
@@ -110,7 +127,12 @@ namespace Button_Masher
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            List<Texture2D> particles = new List<Texture2D>();
+            particles.Add(Content.Load<Texture2D>("star"));
+
             font = Content.Load<SpriteFont>("font");
+            particle = Content.Load<Texture2D>("star");
         }
 
         /// <summary>
@@ -128,8 +150,7 @@ namespace Button_Masher
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
-        {
-         
+        {   
             KeyboardState newState = Keyboard.GetState();
 
             if (IsActive)
@@ -200,12 +221,14 @@ namespace Button_Masher
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             spriteBatch.DrawString(font,"Score: " + score,scorePos,Color.Black);
-            spriteBatch.DrawString(font,"Lives: " + lives,livesPos,Color.Black);
-            spriteBatch.Draw(box1, pos1);
-            spriteBatch.Draw(box2, pos2);
-            spriteBatch.Draw(box3, pos3);
-            spriteBatch.Draw(box4, pos4);
-            spriteBatch.End();           
+            //spriteBatch.DrawString(font,"Lives: " + lives,livesPos,Color.Black);
+
+            spriteBatch.Draw(leftBox.Texture, leftBox.Position);
+            spriteBatch.Draw(secondLeftBox.Texture,secondLeftBox.Position);
+            spriteBatch.Draw(rightBox.Texture,rightBox.Position);
+            spriteBatch.Draw(secondRightBox.Texture,secondRightBox.Position);
+
+            spriteBatch.End();
             base.Draw(gameTime);
         }
 
